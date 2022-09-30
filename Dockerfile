@@ -20,7 +20,7 @@ RUN apk update && \
 COPY start.sh /start/start.sh
 COPY aria2.conf /start/aria2.conf
 
-RUN chmod +x /start/start.sh
+#RUN chmod +x /start/start.sh
 
 # Install Aria2 UIs
 RUN apk add --no-cache --update \
@@ -30,10 +30,13 @@ RUN apk add --no-cache --update \
     unzip master.zip && \
     mv webui-aria2-master/docs /webui && \
     rm -r webui-aria2-master && \
-    # AriaNG
-    mkdir ariang && \
+    # AriaNg
+    mkdir /ariang && \
     wget https://github.com/mayswind/AriaNg/releases/download/1.2.4/AriaNg-1.2.4-AllInOne.zip && \
     unzip AriaNg-1.2.4-AllInOne.zip -d ariang && \
+    # AriaNgDark
+    mkdir /ariaNgDark && \
+    wget https://raw.githubusercontent.com/rickylawson/AriaNgDark/main/index.html -O /ariaNgDark/index.html && \
     # Cleanup
     rm *.zip && \
     apk del \

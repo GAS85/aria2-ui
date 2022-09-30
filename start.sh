@@ -53,8 +53,10 @@ fi
 
 if [ ! "$ARIA_WEB_UI" = "webui" ]; then
   if [ ! "$ARIA_WEB_UI" = "ariang" ]; then
-    echo "ERROR - You set wrong value for ARIA_WEB_UI, supported are: webui,ariang."
-    exit 1
+    if [ ! "$ARIA_WEB_UI" = "ariaNgDark" ]; then
+      echo "ERROR - You set wrong value for ARIA_WEB_UI, supported are: webui,ariang,ariaNgDark."
+      exit 1
+    fi
   fi
 fi
 
