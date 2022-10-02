@@ -1,7 +1,7 @@
 FROM alpine:3.16
 
 LABEL origin.repository="https://github.com/GAS85/aria2-ui" \
-      version=1.0.0
+      version=0.1.0
 
 ENV ARIA_WEB_UI=ariang
 
