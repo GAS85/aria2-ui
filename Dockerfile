@@ -1,7 +1,7 @@
 FROM alpine:3.16
 
 LABEL origin.repository="https://github.com/GAS85/aria2-ui" \
-      version=0.1.0
+      version=0.2.0
 
 ENV ARIA_WEB_UI=ariang
 
@@ -20,7 +20,7 @@ RUN apk update && \
 COPY start.sh /start/start.sh
 COPY aria2.conf /start/aria2.conf
 
-#RUN chmod +x /start/start.sh
+RUN chmod +x /start/start.sh
 
 # Install Aria2 UIs
 RUN apk add --no-cache --update \
